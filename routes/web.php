@@ -18,3 +18,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('post/{slug}/{id}', 'IndexController@post');
+
+Route::get('publish-post', 'IndexController@publish');
+
+Route::post('publish-post', 'IndexController@store');
