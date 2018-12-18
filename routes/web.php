@@ -24,3 +24,12 @@ Route::group(['middleware' => 'auth'], function(){
 });
 
 Route::get('post/{slug}/{id}', 'IndexController@post');
+
+Route::get('about', function() {
+   return view('about');
+});
+
+Route::get('contact', function() {
+    return view('contact');
+});
+
