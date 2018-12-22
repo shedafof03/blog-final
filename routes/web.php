@@ -13,6 +13,10 @@
 
 Route::get('/', 'IndexController@index');
 
+Route::get('logout', function(){
+   \Auth::logout();
+   return redirect('/');
+});
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function(){

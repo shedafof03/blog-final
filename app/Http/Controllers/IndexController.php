@@ -16,7 +16,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('owner')->paginate();
+        $posts = Post::with('owner')->orderBy('id', 'DESC')->paginate();
         //return $posts;
         return view('welcome', compact('posts'));
     }
@@ -62,6 +62,6 @@ class IndexController extends Controller
 
         \Session::flash('class', 'alert-success');
         \Session::flash('message', 'Post published successfully');
-        return back();
+        return redirect('/');
     }
 }
